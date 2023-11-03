@@ -287,7 +287,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- Jump around go to definition
 vim.keymap.set('n', 'gd', "<C-]>", { desc = 'Jump around' })
 
--- Terminal to Normal
+-- Escape terminal mode
 vim.keymap.set('t', '<C-w>N', "<C-\\><C-n>", { desc = 'Escape terminal mode' })
 vim.keymap.set('t', '<C-x>', "<C-\\><C-n>", { desc = 'Escape terminal mode' })
 
