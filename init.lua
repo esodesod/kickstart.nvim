@@ -586,6 +586,7 @@ cmp.setup {
 -- Try practising movements first
 -- vim.keymap.set('n', '<C-h>', "<C-w>h", { desc = 'Window left' })
 -- vim.keymap.set('n', '<C-l>', "<C-w>l", { desc = 'Window right' })
+-- Note that `<C-k>` might collide with default mapping for signature_help
 -- vim.keymap.set('n', '<C-k>', "<C-w>k", { desc = 'Window up' })
 -- vim.keymap.set('n', '<C-j>', "<C-w>j", { desc = 'Window down' })
 
