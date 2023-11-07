@@ -214,6 +214,15 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  
+  {
+    -- Terminal
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = function()
+      require("configs.toggleterm")
+    end,
+  },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -572,3 +581,14 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Window navigation
+-- Try practising movements first
+-- vim.keymap.set('n', '<C-h>', "<C-w>h", { desc = 'Window left' })
+-- vim.keymap.set('n', '<C-l>', "<C-w>l", { desc = 'Window right' })
+-- vim.keymap.set('n', '<C-k>', "<C-w>k", { desc = 'Window up' })
+-- vim.keymap.set('n', '<C-j>', "<C-w>j", { desc = 'Window down' })
+
+-- Terminal
+vim.keymap.set('n', "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>", { desc = 'Terminal Horizontal' })
+vim.keymap.set('n', "<leader>tv", "<CMD>ToggleTerm size=80 direction=vertical<CR>", { desc = 'Terminal Vertical' })
