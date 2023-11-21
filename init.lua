@@ -318,7 +318,10 @@ require('telescope').setup {
     mappings = {
       i = {
         ['<C-u>'] = false,
-        ['<C-d>'] = false,
+        ['<C-d>'] = require('telescope.actions').delete_buffer
+      },
+      n = {
+        ['<C-d>'] = require('telescope.actions').delete_buffer
       },
     },
   },
