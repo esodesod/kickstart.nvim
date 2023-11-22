@@ -596,3 +596,5 @@ cmp.setup {
 -- Terminal
 vim.keymap.set('n', "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>", { desc = 'Terminal Horizontal' })
 vim.keymap.set('n', "<leader>tv", "<CMD>ToggleTerm size=80 direction=vertical<CR>", { desc = 'Terminal Vertical' })
+vim.keymap.set('n', "<leader>tf", "<CMD>ToggleTerm size=80 direction=float<CR>", { desc = 'Terminal Float' })
+vim.keymap.set('n', "<leader>tt", "<CMD>ToggleTerm size=80 direction=tab<CR>", { desc = 'Terminal Tab' })
