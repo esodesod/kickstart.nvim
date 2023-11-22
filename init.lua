@@ -593,8 +593,13 @@ cmp.setup {
 -- vim.keymap.set('n', '<C-k>', "<C-w>k", { desc = 'Window up' })
 -- vim.keymap.set('n', '<C-j>', "<C-w>j", { desc = 'Window down' })
 
--- Terminal
+-- terminal
 vim.keymap.set('n', "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>", { desc = 'Terminal Horizontal' })
 vim.keymap.set('n', "<leader>tv", "<CMD>ToggleTerm size=80 direction=vertical<CR>", { desc = 'Terminal Vertical' })
 vim.keymap.set('n', "<leader>tf", "<CMD>ToggleTerm size=80 direction=float<CR>", { desc = 'Terminal Float' })
 vim.keymap.set('n', "<leader>tt", "<CMD>ToggleTerm size=80 direction=tab<CR>", { desc = 'Terminal Tab' })
+
+-- buffers
+vim.keymap.set('n', "tk", ":bnext<enter>", { desc = 'Buffer Next' })
+vim.keymap.set('n', "tj", ":bprev<enter>", { desc = 'Buffer Previous' })
+vim.keymap.set('n', "td", ":bdelete<enter>", { desc = 'Buffer Delete' })
