@@ -603,3 +603,7 @@ vim.keymap.set('n', "<leader>tt", "<CMD>ToggleTerm size=80 direction=tab<CR>", {
 vim.keymap.set('n', "tk", ":bnext<enter>", { desc = 'Buffer Next' })
 vim.keymap.set('n', "tj", ":bprev<enter>", { desc = 'Buffer Previous' })
 vim.keymap.set('n', "td", ":bdelete<enter>", { desc = 'Buffer Delete' })
+
+-- window
+vim.keymap.set('n', "-", ":new<cr>", { desc = '[n]ew window' })
+vim.keymap.set('n', "|", ":vnew<cr>", { desc = '[v]ertical [n]ew split window' })
