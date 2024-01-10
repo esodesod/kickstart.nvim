@@ -599,7 +599,10 @@ vim.keymap.set('n', "<leader>tv", "<CMD>ToggleTerm size=80 direction=vertical<CR
 vim.keymap.set('n', "<leader>tf", "<CMD>ToggleTerm size=80 direction=float<CR>", { desc = 'Terminal Float' })
 vim.keymap.set('n', "<leader>tt", "<CMD>ToggleTerm size=80 direction=tab<CR>", { desc = 'Terminal Tab' })
 
+-- terminal native
 vim.keymap.set('n', "tt", ":tabnew +term<enter>", { desc = 'tabnew +term' })
+vim.keymap.set('n', "th", ":split +term<enter>", { desc = 'split +term' })
+vim.keymap.set('n', "tv", ":vsplit +term<enter>", { desc = 'vsplit +term' })
 
 -- buffers
 vim.keymap.set('n', "tk", ":bnext<enter>", { desc = 'Buffer Next' })
