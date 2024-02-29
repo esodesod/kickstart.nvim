@@ -223,7 +223,13 @@ require('lazy').setup({
       require("configs.toggleterm")
     end,
   },
-
+  {
+    -- Oil
+    'stevearc/oil.nvim',
+    opts = {},
+    -- optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
