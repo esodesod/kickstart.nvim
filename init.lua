@@ -205,7 +205,6 @@ require('lazy').setup({
       },
     },
   },
-
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -214,21 +213,37 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-  
-  {
-    -- Terminal
+  { -- Terminal
     'akinsho/toggleterm.nvim',
     version = "*",
     config = function()
       require("configs.toggleterm")
     end,
   },
-  {
-    -- Oil
+  { -- Oil
     'stevearc/oil.nvim',
     opts = {},
     -- optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  { -- Autoformat
+    'stevearc/conform.nvim',
+    opts = {
+      notify_on_error = false,
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_fallback = true,
+      },
+      formatters_by_ft = {
+        lua = { 'stylua' },
+        -- Conform can also run multiple formatters sequentially
+        -- python = { "isort", "black" },
+        --
+        -- You can use a sub-list to tell conform to run *until* a formatter
+        -- is found.
+        -- javascript = { { "prettierd", "prettier" } },
+      },
+    },
   },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
