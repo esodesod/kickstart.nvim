@@ -346,6 +346,21 @@ require('telescope').setup {
       },
     },
   },
+  pickers = {
+    find_files = {
+      mappings = {
+        n = {
+          ["cd"] = function(prompt_bufnr)
+            local selection = require("telescope.actions.state").get_selected_entry()
+            local dir = vim.fn.fnamemodify(selection.path, ":p:h")
+            require("telescope.actions").close(prompt_bufnr)
+            -- Depending on what you want put `cd`, `lcd`, `tcd`
+            vim.cmd(string.format("silent lcd %s", dir))
+          end
+        }
+      }
+    },
+  }
 }
 
 -- Enable telescope fzf native, if installed
@@ -363,7 +378,14 @@ vim.keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sf', function()
+  require('telescope.builtin').find_files {
+    -- find_command = { 'rg' },
+    hidden = true,
+    prompt_prefix = '🔍',
+    -- file_ignore_patterns = '^Library/',
+  }
+end, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
@@ -609,11 +631,11 @@ cmp.setup {
 
 -- Window navigation
 -- Try practising movements first
--- vim.keymap.set('n', '<C-h>', "<C-w>h", { desc = 'Window left' })
--- vim.keymap.set('n', '<C-l>', "<C-w>l", { desc = 'Window right' })
+vim.keymap.set('n', '<C-h>', "<C-w>h", { desc = 'Window left' })
+vim.keymap.set('n', '<C-l>', "<C-w>l", { desc = 'Window right' })
 -- Note that `<C-k>` might collide with default mapping for signature_help
--- vim.keymap.set('n', '<C-k>', "<C-w>k", { desc = 'Window up' })
--- vim.keymap.set('n', '<C-j>', "<C-w>j", { desc = 'Window down' })
+vim.keymap.set('n', '<C-k>', "<C-w>k", { desc = 'Window up' })
+vim.keymap.set('n', '<C-j>', "<C-w>j", { desc = 'Window down' })
 
 -- Windows_NT uses pwsh as default shell
 if vim.loop.os_uname().sysname == "Windows_NT" then
