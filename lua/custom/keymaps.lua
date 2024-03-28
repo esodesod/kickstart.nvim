@@ -1,5 +1,5 @@
 -- jump around go to definition
--- vim.keymap.set('n', 'gd', "<C-]>", { desc = 'Jump around' })
+vim.keymap.set('n', 'gd', '<C-]>', { desc = 'Jump to the [d]efinition of the keyword' })
 
 -- terminal
 vim.keymap.set('t', '<C-x>', '<C-\\><C-n>', { desc = 'Escape terminal mode' })
