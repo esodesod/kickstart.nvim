@@ -60,7 +60,7 @@ return {
           mappings = {
             i = {
               ['<c-enter>'] = 'to_fuzzy_refine',
-              ['<C-d>'] = require('telescope.actions').delete_buffer,
+              -- ['<C-d>'] = require('telescope.actions').delete_buffer,
             },
           },
         },
