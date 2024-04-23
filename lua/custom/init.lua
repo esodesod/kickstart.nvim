@@ -1,2 +1,2 @@
-require 'custom/keymaps'
-require 'custom/scheduled'
+require 'custom.keymaps'
+require 'custom.task_scheduler'
