@@ -42,6 +42,11 @@ function M.toggle_scheduled_date()
 end
 
 -- Mapping to trigger the toggle function
-vim.api.nvim_set_keymap('n', '<leader>tom', ':lua require"custom.task_scheduler".toggle_scheduled_date()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>tom',
+  ':lua require"custom.task_scheduler".toggle_scheduled_date()<CR>',
+  { noremap = true, silent = true, desc = '[tom]orrow - add 1 day' }
+)
 
 return M
