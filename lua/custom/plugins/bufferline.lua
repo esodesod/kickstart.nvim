@@ -6,7 +6,7 @@ return {
     local bufferline = require 'bufferline'
     bufferline.setup {
       options = {
-        mode = 'buffers', -- use "buffers" (default) or "tabs" for tabpages only instead.
+        mode = 'tabs', -- use "buffers" (default) or "tabs" for tabpages only instead.
       },
     }
     vim.keymap.set('n', '<Tab>h', ':BufferLineCyclePrev<CR>', { desc = 'bufferline cycle previous' })
