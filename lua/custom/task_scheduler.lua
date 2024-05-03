@@ -1,12 +1,32 @@
 local M = {}
 
--- Function to toggle scheduled date of tasks to tomorrow
-function M.toggle_scheduled_date()
+-- Function to toggle scheduled date of tasks to tomorrow in normal mode
+function M.toggle_scheduled_date_normal()
   -- Get current line number
-  local current_line_number = vim.api.nvim_win_get_cursor(0)[1]
-  -- Get current line
-  local line = vim.fn.getline '.'
+  local line_number = vim.fn.line '.'
+  local line = vim.fn.getline(line_number)
 
+  -- Call the toggle function for a single line
+  M.toggle_scheduled_date_single(line_number, line)
+end
+
+-- Function to toggle scheduled date of tasks to tomorrow in visual mode
+function M.toggle_scheduled_date_visual()
+  -- Get the smallest and largest line numbers in the visual selection
+  local start_line = vim.fn.getpos("'<")[2]
+  local end_line = vim.fn.getpos("'>")[2]
+
+  -- Iterate over each line in the visual selection
+  for line_number = start_line, end_line do
+    local line = vim.fn.getline(line_number)
+
+    -- Call the toggle function for each line
+    M.toggle_scheduled_date_single(line_number, line)
+  end
+end
+
+-- Function to toggle scheduled date of a single line of tasks to tomorrow
+function M.toggle_scheduled_date_single(line_number, line)
   -- Check if line contains scheduled or due date
   local scheduled_date_pattern = '[⏳📅]%s*(%d%d%d%d%-%d%d%-%d%d)$'
   local scheduled_date = string.match(line, scheduled_date_pattern)
@@ -29,7 +49,7 @@ function M.toggle_scheduled_date()
         local new_line = line:gsub('(%d%d%d%d%-%d%d%-%d%d)$', tomorrow_date)
 
         -- Update the line in the buffer
-        vim.fn.setline(current_line_number, new_line)
+        vim.fn.setline(line_number, new_line)
       else
         print 'Invalid date components extracted from scheduled date.'
       end
@@ -41,11 +61,19 @@ function M.toggle_scheduled_date()
   end
 end
 
--- Mapping to trigger the toggle function
+-- Mapping to trigger the toggle function in normal mode
 vim.api.nvim_set_keymap(
   'n',
   '<leader>tom',
-  ':lua require"custom.task_scheduler".toggle_scheduled_date()<CR>',
+  ':<C-U>lua require"custom.task_scheduler".toggle_scheduled_date_normal()<CR>',
+  { noremap = true, silent = true, desc = '[tom]orrow - add 1 day' }
+)
+
+-- Mapping to trigger the toggle function in visual mode
+vim.api.nvim_set_keymap(
+  'x',
+  '<leader>tom',
+  ':<C-U>lua require"custom.task_scheduler".toggle_scheduled_date_visual()<CR>',
   { noremap = true, silent = true, desc = '[tom]orrow - add 1 day' }
 )
 
