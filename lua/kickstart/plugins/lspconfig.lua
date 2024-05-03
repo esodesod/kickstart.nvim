@@ -145,8 +145,14 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {},
         --
+        bashls = {},
+        dockerls = {},
+        docker_compose_language_service = {},
+        -- terraform_lsp = {},
+        -- terraformls = {},
+        yamlls = {},
 
         lua_ls = {
           -- cmd = {...},
