@@ -134,6 +134,12 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+      vim.keymap.set('n', '<leader>st', function()
+        builtin.grep_string {
+          search = '- [ ]',
+          prompt_prefix = '🔍✅',
+        }
+      end, { desc = '[S]earch [T]asks (markdown checkboxes)' })
     end,
   },
 }
