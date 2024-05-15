@@ -1,17 +1,23 @@
 return {
   -- Oil
   'stevearc/oil.nvim',
-  opts = {
-    view_options = {
-      -- Show files and directories that start with "."
-      show_hidden = true,
-      natural_order = true,
-      sort = {
-        -- sort order can be "asc" or "desc"
-        -- see :help oil-columns to see which columns are sortable
-        { 'type', 'asc' },
-        { 'name', 'asc' },
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  config = function()
+    require('oil').setup {
+      columns = { 'icon' },
+      keymaps = {
+        ['<C-h>'] = false,
+        -- ['<M-h>'] = 'actions.select_split',
       },
-    },
-  },
+      view_options = {
+        show_hidden = true,
+      },
+    }
+
+    -- Open parent directory in current window
+    -- vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+
+    -- Open parent directory in floating window
+    vim.keymap.set('n', '<space>-', require('oil').toggle_float)
+  end,
 }
