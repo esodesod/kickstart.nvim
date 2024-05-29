@@ -168,6 +168,9 @@ return {
             },
           },
         },
+        powershell_es = {
+          bundle_path = '/Users/esod/Downloads/temp/apps/PowerShellEditorServices',
+        },
       }
 
       -- Ensure the servers and tools above are installed
