@@ -28,7 +28,7 @@ end
 -- Function to toggle scheduled date of a single line of tasks to tomorrow
 function M.toggle_scheduled_date_single(line_number, line)
   -- Check if line contains scheduled or due date
-  local scheduled_date_pattern = '[⏳📅]%s*(%d%d%d%d%-%d%d%-%d%d)$'
+  local scheduled_date_pattern = '[⏳📅]%s*(%d%d%d%d%-%d%d%-%d%d)%s*$'
   local scheduled_date = string.match(line, scheduled_date_pattern)
 
   if scheduled_date then
