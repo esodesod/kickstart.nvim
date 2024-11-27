@@ -13,8 +13,6 @@ return {
   dependencies = {
     -- Required.
     'nvim-lua/plenary.nvim',
-
-    -- see below for full list of optional dependencies 👇
   },
   opts = {
     workspaces = {
@@ -23,7 +21,6 @@ return {
         path = '~/obsidian/obsidian-esod',
       },
     },
-
-    -- see below for full list of options 👇
+    disable_frontmatter = true,
   },
 }
