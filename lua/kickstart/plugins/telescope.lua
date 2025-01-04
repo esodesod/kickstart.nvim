@@ -109,7 +109,7 @@ return {
           find_command = { 'fd', '--type=directory' },
           hidden = false,
           prompt_prefix = '📂',
-          file_ignore_patterns = { 'Library', 'node_modules', '.alfredpreferences/', 'grafana/loki', 'microsoftdocs', 'Dropbox/Apps/', '.resources/' },
+          file_ignore_patterns = { 'Library', 'node_modules', '.alfredpreferences/', 'grafana/loki', 'microsoftdocs', 'Dropbox/Apps/', 'yarle' },
           search_dirs = { '~/github', '~/Dropbox/', '~/Downloads/' },
         }
       end, { desc = '[S]earch [E]sod [D]irectories' })
