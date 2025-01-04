@@ -99,11 +99,20 @@ return {
       vim.keymap.set('n', '<leader>sf', function()
         builtin.find_files {
           -- find_command = { 'rg' },
-          hidden = true,
+          hidden = false,
           prompt_prefix = '🔍',
-          -- file_ignore_patterns = '^Library/',
+          file_ignore_patterns = { 'Library', 'node_modules', '.alfredpreferences/', 'grafana/loki', 'microsoftdocs', 'Dropbox/Apps/', '.resources/' },
         }
       end, { desc = '[S]earch [F]iles' })
+      vim.keymap.set('n', '<leader>sed', function()
+        builtin.find_files {
+          find_command = { 'fd', '--type=directory' },
+          hidden = false,
+          prompt_prefix = '📂',
+          file_ignore_patterns = { 'Library', 'node_modules', '.alfredpreferences/', 'grafana/loki', 'microsoftdocs', 'Dropbox/Apps/', '.resources/' },
+          search_dirs = { '~/github', '~/Dropbox/', '~/Downloads/' },
+        }
+      end, { desc = '[S]earch [E]sod [D]irectories' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })

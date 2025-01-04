@@ -74,6 +74,6 @@ if vim.loop.os_uname().sysname == 'Windows_NT' then
 end
 
 -- Auto change workdir when opening a file, buffer, etc.
--- vim.opt.autochdir = true
+vim.opt.autochdir = true
 
 -- vim: ts=2 sts=2 sw=2 et
