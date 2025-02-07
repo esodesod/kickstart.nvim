@@ -22,3 +22,7 @@ vim.keymap.set('t', '<C-x>', '<C-\\><C-n>', { desc = 'Escape terminal mode' })
 vim.keymap.set('n', 'tt', ':tabnew +term<enter>', { desc = 'tabnew +term' })
 vim.keymap.set('n', 'th', ':split +term<enter>', { desc = 'split +term' })
 vim.keymap.set('n', 'tv', ':vsplit +term<enter>', { desc = 'vsplit +term' })
+
+-- macbooks without ESC key, brilliant
+vim.keymap.set('i', 'jk', '<esc>', { desc = 'escape key' })
+vim.keymap.set('i', 'jj', '<esc>', { desc = 'escape key' })
