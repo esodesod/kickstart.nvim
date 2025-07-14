@@ -18,32 +18,6 @@ return {
     opts = {
       -- add any opts here
       -- for example
-      debug = false,
-      mode = 'chat',
-      tokenizer = 'default',
-      system_prompt = '',
-      override_prompt_dir = '',
-      rules = {},
-      rag_service = 'default',
-      web_search_engine = 'duckduckgo',
-      dual_boost = false,
-      behaviour = {},
-      prompt_logger = {},
-      history = {},
-      highlights = {},
-      img_paste = {},
-      mappings = {},
-      windows = {},
-      diff = {},
-      hints = {},
-      repo_map = {},
-      file_selector = {},
-      selector = {},
-      input = {},
-      suggestion = {},
-      disabled_tools = {},
-      custom_tools = {},
-      slash_commands = {},
       provider = 'gemini',
       providers = {
         gemini = {
