@@ -18,18 +18,45 @@ return {
     opts = {
       -- add any opts here
       -- for example
-      provider = 'ollama',
+      debug = false,
+      mode = 'chat',
+      tokenizer = 'default',
+      system_prompt = '',
+      override_prompt_dir = '',
+      rules = {},
+      rag_service = 'default',
+      web_search_engine = 'duckduckgo',
+      dual_boost = false,
+      behaviour = {},
+      prompt_logger = {},
+      history = {},
+      highlights = {},
+      img_paste = {},
+      mappings = {},
+      windows = {},
+      diff = {},
+      hints = {},
+      repo_map = {},
+      file_selector = {},
+      selector = {},
+      input = {},
+      suggestion = {},
+      disabled_tools = {},
+      custom_tools = {},
+      slash_commands = {},
+      provider = 'gemini',
       providers = {
-        ollama = {
-          endpoint = 'http://ollama.esod.local:11434',
-          model = 'qwen2.5-coder:7b',
+        gemini = {
           timeout = 30000, -- Timeout in milliseconds
           extra_request_body = {
             temperature = 0.75,
             max_tokens = 20480,
           },
         },
-      },
+        ollama = {
+          endpoint = 'http://ollama.esod.local:11434',
+          model = 'qwen2.5-coder:32b',
+        },
     },
     dependencies = {
       'nvim-lua/plenary.nvim',
