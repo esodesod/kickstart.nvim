@@ -55,8 +55,9 @@ return {
         },
         ollama = {
           endpoint = 'http://ollama.esod.local:11434',
-          model = 'qwen2.5-coder:32b',
+          model = 'qwen2.5-coder:7b',
         },
+      },
     },
     dependencies = {
       'nvim-lua/plenary.nvim',
