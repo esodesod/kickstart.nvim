@@ -18,18 +18,17 @@ return {
     opts = {
       -- add any opts here
       -- for example
-      provider = 'gemini',
+      provider = 'ollama',
       providers = {
         gemini = {
-          timeout = 30000, -- Timeout in milliseconds
-          extra_request_body = {
-            temperature = 0.75,
-            max_tokens = 20480,
-          },
+          -- model = 'gemini-2.5-flash',
         },
         ollama = {
-          endpoint = 'http://ollama.esod.local:11434',
-          model = 'qwen2.5-coder:7b',
+          -- lm studio is openai compatible
+          __inherited_from = 'openai',
+          api_key_name = '',
+          endpoint = 'http://192.168.1.213:1234/v1',
+          -- model = 'qwen/qwen2.5-coder-32b',
         },
       },
     },
