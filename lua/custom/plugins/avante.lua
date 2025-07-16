@@ -23,14 +23,23 @@ return {
         gemini = {
           -- model = 'gemini-2.5-flash',
         },
+        openai = {
+          endpoint = 'http://localhost:1234/v1',
+          api_key_name = '',
+        },
         ollama = {
           -- lm studio is openai compatible
-          __inherited_from = 'openai',
-          api_key_name = '',
-          endpoint = 'http://192.168.1.213:1234/v1',
+          -- __inherited_from = 'openai',
+          -- api_key_name = '',
+          -- endpoint = 'http://192.168.1.98:1234/v1',
           -- model = 'qwen/qwen2.5-coder-32b',
+          endpoint = 'http://127.0.0.1:11434',
+          model = 'devstral:24b-small-2505-q8_0',
         },
       },
+      -- behaviour = {
+      --   auto_approve_tool_permissions = { 'replace_in_file' }, -- auto-approve replace_in_file tool only
+      -- },
     },
     dependencies = {
       'nvim-lua/plenary.nvim',
