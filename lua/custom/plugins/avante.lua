@@ -16,16 +16,18 @@ return {
     ---@module 'avante'
     ---@type avante.Config
     opts = {
+      mode = 'legacy',
       -- add any opts here
       -- for example
-      provider = 'ollama',
+      provider = 'openai',
       providers = {
         gemini = {
           -- model = 'gemini-2.5-flash',
         },
         openai = {
-          endpoint = 'http://localhost:1234/v1',
+          endpoint = 'http://tux.local:1234/v1',
           api_key_name = '',
+          disable_tools = true,
         },
         ollama = {
           -- lm studio is openai compatible
@@ -39,6 +41,7 @@ return {
       },
       -- behaviour = {
       --   auto_approve_tool_permissions = { 'replace_in_file' }, -- auto-approve replace_in_file tool only
+      --   minimize_diff = true,
       -- },
     },
     dependencies = {
