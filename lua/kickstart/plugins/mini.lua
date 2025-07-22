@@ -17,6 +17,10 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      -- Setup diff view using MiniDiff plugin
+      -- MiniDiff provides a simple way to visualize git differences directly in Neovim.
+      require('mini.diff').setup()
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
